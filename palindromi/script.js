@@ -1,18 +1,11 @@
 // function determines if a word is a palindrome or not and returns true or false
 function isPalindrome(word) {
-    // array to store the characters that make up word
-    let charArray = [''];
-    // variable to store word backward
+    // variable to store word backwards
     let backWord = '';
-
-    // push each character of word into charArray
-    for(i = 0; i < word.length; i++){
-        charArray.push(word[i]);
-    }
     
-    // cycle through the characters in reverse order to make up our backWord
-    for(i = charArray.length - 1; i >= 0; i--){
-        backWord += charArray[i];
+    // cycle through the characters of word in reverse order to make up our backWord
+    for(i = word.length - 1; i >= 0; i--){
+        backWord += word[i];
     }
 
     // compare backWord and original user input
