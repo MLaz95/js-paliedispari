@@ -13,6 +13,10 @@ function oddOrEven (x){
     }
 }
 
+const playerChoice = document.querySelector('#player-choice');
+const computerChoice = document.querySelector('#computer-choice');
+const totalElement = document.querySelector('#total');
+const resultElement = document.querySelector('#result');
 const startButton = document.querySelector('#play');
 
 
@@ -20,6 +24,8 @@ startButton.addEventListener('click',
     function() {
         let userGuess;
         let userNumber;
+
+        totalElement.innerHTML = 'Total'
 
         // user chooses odd or even
         do{
@@ -47,10 +53,20 @@ startButton.addEventListener('click',
 
         // determine winner
         if(userGuess == oddOrEven(total)){
-            console.log('congrats you won!')
+            resultElement.innerHTML = 'Congrats, you won!';
         } else{
-            console.log('you lost. better luck next time')
+            resultElement.innerHTML = 'You lost. Better luck next time';
         }
+
+        playerChoice.innerHTML = userNumber;
+        playerChoice.classList.remove('opacity-0');
+
+        computerChoice.innerHTML = computerNumber;   
+        computerChoice.classList.remove('opacity-0');
+
+        totalElement.append(` = ${total}. You bet on ${userGuess}`)
+
+        
     }
 
 
