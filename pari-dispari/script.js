@@ -20,3 +20,24 @@ function oddOrEven (x){
     }
 }
 
+
+const startButton = document.querySelector('#play');
+
+
+startButton.addEventListener('click',
+    function() {
+        const userGuess = prompt('Choose odd or even');
+        const userNumber = Number(prompt('Pick a number from 1 to 5'));
+        const computerNumber = random(5,1);
+
+        const total = userNumber + computerNumber;
+        
+        if(userGuess == oddOrEven(total)){
+            console.log('congrats you won!')
+        } else{
+            console.log('you lost. better luck next time')
+        }
+    }
+
+
+)
