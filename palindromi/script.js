@@ -1,22 +1,22 @@
-// Chiedere all’utente di inserire una parola.
-// Creare una funzione per capire se la parola inserita è palindroma
-// (ad esempio, questa funzione potrebbe funzionare così: passandole la parola come parametro,
-// farà i suoi calcoli per capire se è palindroma o meno e ci restituirà
-// true o false in base all'esito)
-
+// function determines if a word is a palindrome or not and returns true or false
 function isPalindrome(word) {
+    // array to store the characters that make up word
     let charArray = [''];
+    // variable to store word backward
     let backWord = '';
 
+    // push each character of word into charArray
     for(i = 0; i < word.length; i++){
         charArray.push(word[i]);
     }
     
+    // cycle through the characters in reverse order to make up our backWord
     for(i = charArray.length - 1; i >= 0; i--){
         backWord += charArray[i];
     }
 
-    if (backWord == userInput){
+    // compare backWord and original user input
+    if (backWord.toLowerCase() == userInput.toLowerCase()){
         return true;
     }else{
         return false;
@@ -24,13 +24,12 @@ function isPalindrome(word) {
 }
 
 
-
 const buttonElement = document.querySelector('#button')
 let userInput
 
 buttonElement.addEventListener('click', 
     function(){
-
+        // making sure the user inputs a word
         do{
             userInput = prompt('Tell me a word');
             if(!isNaN(userInput)){
@@ -38,6 +37,7 @@ buttonElement.addEventListener('click',
             }
         } while (!isNaN(userInput))
         
+        // print
         if(isPalindrome(userInput)){
             console.log('palindrome');
         } else{
