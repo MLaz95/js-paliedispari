@@ -24,8 +24,9 @@ function isPalindrome(word) {
 }
 
 
-const buttonElement = document.querySelector('#button')
-let userInput
+const buttonElement = document.querySelector('#button');
+const resultElement = document.querySelector('#result');
+let userInput;
 
 buttonElement.addEventListener('click', 
     function(){
@@ -39,9 +40,11 @@ buttonElement.addEventListener('click',
         
         // print
         if(isPalindrome(userInput)){
-            console.log('palindrome');
+            resultElement.innerHTML = `"${userInput}" is a palindrome!`
         } else{
-            console.log('not a palindrome');
+            resultElement.innerHTML = `"${userInput}" is not a palindrome.`
         }
+
+        resultElement.classList.remove('opacity-0');
     }
 )
