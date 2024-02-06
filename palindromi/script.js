@@ -24,12 +24,24 @@ function isPalindrome(word) {
 }
 
 
-const userInput = 'test';
 
-console.log(isPalindrome(userInput));
+const buttonElement = document.querySelector('#button')
+let userInput
 
-// if (isPalindrome(userInput)){
-//     console.log('yes')
-// } else{
-//     console.log('no')
-// }
+buttonElement.addEventListener('click', 
+    function(){
+
+        do{
+            userInput = prompt('Tell me a word');
+            if(!isNaN(userInput)){
+                alert('Please input a word')
+            }
+        } while (!isNaN(userInput))
+        
+        if(isPalindrome(userInput)){
+            console.log('palindrome');
+        } else{
+            console.log('not a palindrome');
+        }
+    }
+)
